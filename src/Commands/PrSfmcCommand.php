@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Dmgroup\PrSfmc\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PrSfmcCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'pr-sfmc';
 
     public $description = 'My command';
 
