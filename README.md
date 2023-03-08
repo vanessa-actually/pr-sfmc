@@ -23,6 +23,15 @@ You can install the package via composer:
 composer require dmgroup/pr-sfmc
 ```
 
+add keys in .env file 
+
+```
+SFMC_TOKEN=
+SFMC_HOST=
+SFMC_ENTITY=
+SFMC_TOUCHPOINT_NAME=
+```
+
 You can publish and run the migrations with:
 
 ```bash
