@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('transmission_status')->nullable();
             $table->text('request_dump')->nullable();
             $table->text('response_dump')->nullable();
+
             $table->string('transmittable_type')->nullable();
             $table->unsignedBigInteger('transmittable_id')->nullable();
 

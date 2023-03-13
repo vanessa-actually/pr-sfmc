@@ -13,14 +13,13 @@ class PrSfmc
     public static \stdClass $source;
     public static \stdClass $optin;
     public static \stdClass $activity;
-    public static \stdClass $phone;
     public static $transmissionLog;
     public static int $transmittableId;
 
     public function __construct()
     {
         self::$transmissionLog = Log::build([
-            'driver' => 'single',
+            'driver' => 'daily',
             'path' => storage_path('logs/sfmc-transmissions.log'),
         ]);
 
@@ -28,7 +27,6 @@ class PrSfmc
         self::$source = new \stdClass();
         self::$optin = new \stdClass();
         self::$activity = new \stdClass();
-        self::$phone = new \stdClass();
 
         self::$data->entryType = 'consumer';
         self::$data->contactType = 'B2C';
@@ -51,19 +49,12 @@ class PrSfmc
         self::$source->touchPointType = "Webform";
         self::$source->touchPointDescription = "";
 
-        self::$optin->brand = config('pr-sfmc.brand');
-        self::$optin->optInStatus = 1;
-        self::$optin->legalConsent = "consenso liv.1.";
-
         self::$activity->activityId = config('pr-sfmc.activityId');
         self::$activity->activityName = config('pr-sfmc.activityName');
         self::$activity->activityType = config('pr-sfmc.activityType');
 
         self::$data->source = [
             self::$source,
-        ];
-        self::$data->optIns = [
-            self::$optin,
         ];
         self::$data->activities = [
             self::$activity,
@@ -181,12 +172,23 @@ class PrSfmc
 
     public static function addPhoneNumber(string $phoneNumber, string $phoneType): \stdClass
     {
-        $phone = new self::$phone();
+        $phone = new \stdClass();
         $phone->type = $phoneType;
         $phone->value = $phoneNumber;
 
         self::$data->phone[] = $phone;
         return $phone;
+    }
+
+    public static function addConsent(bool $accepted, string $consentText): \stdClass
+    {
+        $consent = new \stdClass();
+        $consent->brand = config('pr-sfmc.brand');
+        $consent->optInStatus = (int)$accepted;
+        $consent->legalConsent = $consentText;
+
+        self::$data->optIns[] = $consent;
+        return $consent;
     }
 
     public static function getBodyJson(): string
