@@ -13,7 +13,9 @@ return new class extends Migration
 
             $table->string('endpoint');
             $table->unsignedInteger('response_status');
-            $table->string('transmission_status')->nullable();
+            $table->boolean('transmission_status')->nullable();
+            $table->string('sfmc_entry_id')->nullable();
+            $table->text('transmission_error_message')->nullable();
             $table->text('request_dump')->nullable();
             $table->text('response_dump')->nullable();
 
