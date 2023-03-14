@@ -170,6 +170,23 @@ class PrSfmc
         return self::$transmittableId = $transmittableId;
     }
 
+    public static function setContactType($contactType)
+    {
+        $allowedContactTypes = [
+            'B2C',
+            'B2B',
+            'B2E',
+            'HNW',
+            'SHA',
+        ];
+
+        if (!in_array($contactType,$allowedContactTypes)) {
+            self::$transmissionLog->error('contact type not permitted');
+            return null;
+        }
+        return self::$data->contactType = $contactType;
+    }
+
     public static function addPhoneNumber(string $phoneNumber, string $phoneType): \stdClass
     {
         $phone = new \stdClass();

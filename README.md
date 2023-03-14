@@ -32,24 +32,32 @@ SFMC_TRANSMITTABLE_TYPE= the model of the entity you want to transmit
 
 ## Admittable activity names
 
-- Contest
-- Data Migration
-- E-commerce
-- Enquiry
-- Event
-- EventBooking
-- Horus
-- Newsletter
-- Profile Center
-- Profile Center
-- Program Subscription
-- Promotional Campaigns
-- SFMCInteractiveForm
-- Survey
-- Training
-- Unsubscription
-- Visit
-- eCommerce transaction
+- `Contest`
+- `Data Migration`
+- `E-commerce`
+- `Enquiry`
+- `Event`
+- `EventBooking`
+- `Horus`
+- `Newsletter`
+- `Profile Center`
+- `Profile Center`
+- `Program Subscription`
+- `Promotional Campaigns`
+- `SFMCInteractiveForm`
+- `Survey`
+- `Training`
+- `Unsubscription`
+- `Visit`
+- `eCommerce transaction`
+
+## Admittable contact Types
+
+- `B2C` Business 2 consumer
+- `B2B` Business 2 business
+- `B2E` Business to Employee
+- `HNW` High Net Worth Individual
+- `SHA` Shareholders Club Premium
 
 You can publish and run the migrations with:
 
