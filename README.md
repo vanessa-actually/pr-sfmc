@@ -30,7 +30,7 @@ SFMC_HOST= defaults to staging at https://api.pernod-ricard.io/staging/v3
 SFMC_TRANSMITTABLE_TYPE= the model of the entity you want to transmit
 ```
 
-## Admittable activity ids
+## Admittable activity names
 
 - Contest
 - Data Migration

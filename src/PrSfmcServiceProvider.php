@@ -20,7 +20,6 @@ class PrSfmcServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_sfmc_transmissions_table')
-            ->hasMigration('create_transmittable_table')
             ->hasCommand(PrSfmcCommand::class);
     }
 }
