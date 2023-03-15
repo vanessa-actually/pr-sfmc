@@ -100,13 +100,15 @@ class PrSfmc
 
         $responseBody = json_decode($result->body(),true);
 
-        if (array_key_exists('x-rejection-errors',$responseBody)) {
-            $transmission->transmission_status = false;
-            $transmission->transmission_error_message = $responseBody['x-rejection-errors']['message'];
-        } else {
-            $transmission->transmission_status = true;
+        if ($responseBody) {
+            if (array_key_exists('x-rejection-errors',$responseBody)) {
+                $transmission->transmission_status = false;
+                $transmission->transmission_error_message = $responseBody['x-rejection-errors']['message'];
+            } else {
+                $transmission->transmission_status = true;
+            }
+            $transmission->sfmc_entry_id = $responseBody['entry_public_id'];
         }
-        $transmission->sfmc_entry_id = $responseBody['entry_public_id'];
 
         if ($transmission->save()) {
             return $transmission;
