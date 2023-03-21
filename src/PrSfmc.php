@@ -159,7 +159,7 @@ class PrSfmc
     }
     public static function setBirthday(Carbon $birthday): string
     {
-        return self::$data->birthday = $birthday->format('Y-M-D');
+        return self::$data->birthday = $birthday->format('Y-m-d');
     }
 
     public static function setJobTitle(string $jobTitle): string

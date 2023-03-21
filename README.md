@@ -30,35 +30,6 @@ SFMC_HOST= defaults to staging at https://api.pernod-ricard.io/staging/v3
 SFMC_TRANSMITTABLE_TYPE= the model of the entity you want to transmit
 ```
 
-## Admittable activity names
-
-- `Contest`
-- `Data Migration`
-- `E-commerce`
-- `Enquiry`
-- `Event`
-- `EventBooking`
-- `Horus`
-- `Newsletter`
-- `Profile Center`
-- `Profile Center`
-- `Program Subscription`
-- `Promotional Campaigns`
-- `SFMCInteractiveForm`
-- `Survey`
-- `Training`
-- `Unsubscription`
-- `Visit`
-- `eCommerce transaction`
-
-## Admittable contact Types
-
-- `B2C` Business 2 consumer
-- `B2B` Business 2 business
-- `B2E` Business to Employee
-- `HNW` High Net Worth Individual
-- `SHA` Shareholders Club Premium
-
 You can publish and run the migrations with:
 
 ```bash
@@ -127,6 +98,35 @@ $transmission holds the completed result and provides following properties
 | sfmc_entry_id | SFMC public entry id. It is filled even if transmission is not successful|
 | transmission_error_message | if transmission status is false, it holds the errormessage. Please refer to response dump for error details |
 | created_at | transmission creation timestamp |
+
+## Admittable activity names
+
+- `Contest`
+- `Data Migration`
+- `E-commerce`
+- `Enquiry`
+- `Event`
+- `EventBooking`
+- `Horus`
+- `Newsletter`
+- `Profile Center`
+- `Profile Center`
+- `Program Subscription`
+- `Promotional Campaigns`
+- `SFMCInteractiveForm`
+- `Survey`
+- `Training`
+- `Unsubscription`
+- `Visit`
+- `eCommerce transaction`
+
+## Admittable contact Types
+
+- `B2C` Business 2 consumer
+- `B2B` Business 2 business
+- `B2E` Business to Employee
+- `HNW` High Net Worth Individual
+- `SHA` Shareholders Club Premium
 
 
 ## Testing
